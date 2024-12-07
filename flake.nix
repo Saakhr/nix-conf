@@ -22,7 +22,7 @@
 	in {
 
 # nixos - system hostname
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.machine = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				pkgs-stable = import nixpkgs-stable {
 					inherit system;

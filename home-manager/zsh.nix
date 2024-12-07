@@ -16,6 +16,7 @@ in
   # set the path to the custom folder
   home.file.".zshrc".text = ''
     ${prependZshCustom}
+    eval "$(zoxide init zsh)"
   '';
   #plugin download script
   home.activation.cloneZshPlugins = lib.mkAfter ''
@@ -53,10 +54,11 @@ in
       conf = "nvim ${flakeDir}/nixos/configuration.nix";
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
-      ls = "exa --icons -a --group-directories-first";
+      ls = "eza --icons -a --group-directories-first";
       f = "cd ~ && cd \$(find * -type d | fzf)";
       nv = "nvim";
       se = "sudoedit";
+      cd = "z";
       cl = "clear";
     };
 

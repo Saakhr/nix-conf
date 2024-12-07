@@ -23,7 +23,7 @@
 #	displayManager.defaultSession = "xfce";
   #};
 
-   networking.hostName = "nixos"; # Define your hostname.
+   networking.hostName = "machine"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -47,7 +47,7 @@
   # services.xserver.enable = true;
 
 
-  
+   services.openssh.enable = true;  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

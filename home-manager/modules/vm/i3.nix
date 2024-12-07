@@ -19,8 +19,8 @@ in {
 				outer = 2;
 			};
 			startup = [
-				{ command = "picom"; }
 				{ command = "xfce4-power-manager"; }
+				{ command = "pa-applet"; }
 				{ command = "i3-back"; }
 				{ command = "fcitx5"; }
 			];
