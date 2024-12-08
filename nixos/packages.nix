@@ -21,6 +21,7 @@
 
     # Coding stuff
     gnumake
+    cmake
     gcc
     gh
     go

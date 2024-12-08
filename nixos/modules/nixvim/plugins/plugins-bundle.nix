@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
 	./nix.nix
@@ -10,6 +11,10 @@
   ./treesitter.nix
   ./cmp.nix
   ./lsp.nix
-  ./cmake.nix
+  ./dap.nix
+  ];
+
+  programs.nixvim.extraPlugins = [
+   pkgs.vimPlugins.cmake-tools-nvim 
   ];
 }
