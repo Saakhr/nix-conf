@@ -1,33 +1,61 @@
 {
   programs.nixvim.plugins.none-ls = {
     enable = true;
-    settings = {
-      on_attach =''
-      function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-              -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
-              vim.lsp.buf.format({ async = false })
-            end,
-          })
-        end
-      end,
-      '';
+    sources.formatting = {
+      alejandra.enable = true;
+      hclfmt.enable = true;
+      just.enable = true;
+      opentofu_fmt.enable = true;
+      prettier.enable = true;
+      # rubyfmt is broken on darwin-based systems
+      rubyfmt.enable = (
+        pkgs.stdenv.hostPlatform.system
+        != "x86_64-darwin"
+        && pkgs.stdenv.hostPlatform.system != "aarch64-darwin"
+      );
+      sqlformat.enable = true;
+      stylua.enable = true;
+      yamlfmt.enable = true;
     };
+    sources.diagnostics = {
+      trivy.enable = true;
+      yamllint.enable = true;
+    };
+    conform-nvim = {
+      enable = true;
+      settings = {
+        format_on_save = {
+          lsp_fallback = "fallback";
+          timeout_ms = 500;
+        };
+        notify_on_error = true;
+
+        formatters_by_ft = {
+          css = ["prettier"];
+          html = ["prettier"];
+          json = ["prettier"];
+          just = ["just"];
+          lua = ["stylua"];
+          markdown = ["prettier"];
+          nix = ["alejandra"];
+          ruby = ["rubyfmt"];
+          terraform = ["tofu_fmt"];
+          tf = ["tofu_fmt"];
+          yaml = ["yamlfmt"];
+        };
+      };
+    };
+
     #fix
-    sources = [
-     "null_ls.builtins.formatting.stylua"
-     "null_ls.builtins.completion.spell"
-     "null_ls.builtins.code_actions.gitsigns"
-     "null_ls.builtins.formatting.gofmt"
-     "null_ls.builtins.formatting.goimports"
-     "null_ls.builtins.formatting.prettier"
-     "null_ls.builtins.formatting.gleam_format"
-    ];
+#     {
+#   plugins = {
+#     conform-nvim = {
+#       enable = true;
+#       settings = { formatters_by_ft.go = [ "golines" ]; };
+#     };
+#     lsp.servers.gopls.enable = true;
+#     none-ls.sources.formatting.golines.enable = true;
+#   };
+# }
   };
 }
