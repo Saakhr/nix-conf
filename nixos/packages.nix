@@ -1,29 +1,35 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    #Desktop
+
+    # Desktop
     firefox
     gparted
     telegram-desktop
     mpv
     xfce.thunar
+    xarchiver
     ungoogled-chromium
     gedit
     syncthing
     virtualbox
+    keepassxc
     konsole
     rofi
     dmenu
     networkmanager_dmenu
+    qdirstat
 
     # Coding stuff
     gnumake
     gcc
+    gh
     go
 
 
     # CLI utils
     neofetch
     file
+    auto-cpufreq
     tree
     wget
     git
@@ -49,13 +55,17 @@
     openssl
     ripgrep
     lazygit
-    gvfs
     bluez
     bluez-tools
     fzf
     vim 
     zoxide
+    wine
     pa_applet
+
+    # Class
+    #android-studio-full
+    scilab-bin
 
     # GUI utils
     feh
@@ -63,16 +73,17 @@
     mupdf
     zathura
     fcitx5
+    libsForQt5.fcitx5-configtool
 
-    #vm
+    # Wm
     i3status
     i3-back
 
-    #sound
+    # Sound
     pavucontrol
     pulseaudio
 
-    #misc
+    # Misc
     home-manager
     flameshot
     xfce.xfce4-power-manager

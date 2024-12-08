@@ -41,7 +41,7 @@ in
 
     shellAliases =
       let
-        flakeDir = "~/nix";
+        flakeDir = "/home/agent/nix";
       in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
       upd = "nix flake update ${flakeDir}";
