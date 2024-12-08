@@ -1,4 +1,5 @@
- programs.nixvim.plugins = {
+{ 
+  programs.nixvim.plugins = {
 
     treesitter-refactor = {
       enable = true;
@@ -37,3 +38,4 @@
     };
   };
 }
+

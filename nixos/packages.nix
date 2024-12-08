@@ -67,6 +67,7 @@
     # Class
     #android-studio-full
     scilab-bin
+    vscode
 
     # GUI utils
     feh
