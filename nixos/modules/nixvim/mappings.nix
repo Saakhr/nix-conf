@@ -15,6 +15,10 @@
         icon = "󰓩 ";
       }
       {
+        __unkeyed-1 = "<Leader>a";
+        group = "Add File To Harpoon List";
+      }
+      {
         __unkeyed = "<leader>c";
         group = "Codesnap";
         icon = "󰄄 ";
@@ -43,6 +47,46 @@
         ];
       }
       {
+        __unkeyed-1 = [
+          {
+            __unkeyed-1 = "<leader>r";
+            group = "LSP";
+          }
+          {
+            __unkeyed-1 = "<leader>ra";
+            __unkeyed-2 = {
+              __raw = ''
+                vim.lsp.buf.code_action
+              '';
+            };
+            group = "Code Actions";
+          }
+          {
+            __unkeyed-1 = "<leader>rf";
+            __unkeyed-2 = {
+              __raw = ''
+                vim.lsp.buf.format
+              '';
+            };
+            group = "Format File";
+          }
+          {
+            __unkeyed-1 = "<leader>rr";
+            __unkeyed-2 = {
+              __raw = ''
+                vim.lsp.buf.rename
+              '';
+            };
+            group = "Rename Variable";
+          }
+          {
+            __unkeyed-1 = "<leader>rR";
+            __unkeyed-2 = "<cmd>LspRestart<CR>";
+            group = "Restart Lsp";
+          }
+        ];
+      }
+      {
         __unkeyed-1 = "<leader>db";
         __unkeyed-2 = {
           __raw = ''
@@ -60,6 +104,36 @@
         __unkeyed-2 = "<cmd>Oil<CR>";
         desc = "Open Oil";
       }
+      {
+        __unkeyed-1 = "<C-s>";
+        __unkeyed-2 = "<cmd>w<CR>";
+      }
+      {
+        __unkeyed-1 = "K";
+        __unkeyed-2 = {
+          __raw = ''
+            vim.lsp.buf.hover
+          '';
+        };
+      }
+      {
+        __unkeyed-1 = "gD";
+        __unkeyed-2 = {
+          __raw = ''
+            vim.lsp.buf.declaration
+          '';
+        };
+      }
+      {
+        __unkeyed-1 = "gd";
+        __unkeyed-2 = {
+          __raw = ''
+            vim.lsp.buf.definition
+          '';
+        };
+      }
+
+
     ];
     win = {
       border = "single";

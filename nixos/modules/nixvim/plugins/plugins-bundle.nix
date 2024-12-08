@@ -10,5 +10,6 @@
   ./treesitter.nix
   ./cmp.nix
   ./lsp.nix
+  ./cmake.nix
   ];
 }
