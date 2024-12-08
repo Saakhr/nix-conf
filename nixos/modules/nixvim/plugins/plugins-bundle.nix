@@ -8,5 +8,7 @@
   ./harpoon.nix
   ./helpers.nix
   ./treesitter.nix
+  ./cmp.nix
+  ./lsp.nix
   ];
 }

@@ -9,6 +9,7 @@
     ./thunar.nix
     ./trim.nix
     ./xserver.nix
+    ./inputs.nix
     ./nixvim/nixvim.nix
   ];
 

@@ -55,6 +55,7 @@
     openssl
     ripgrep
     lazygit
+    xclip
     bluez
     bluez-tools
     fzf
@@ -74,6 +75,7 @@
     zathura
     fcitx5
     libsForQt5.fcitx5-configtool
+    networkmanagerapplet
 
     # Wm
     i3status

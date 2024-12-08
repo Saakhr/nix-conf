@@ -21,6 +21,7 @@ in {
 			startup = [
 				{ command = "xfce4-power-manager"; }
 				{ command = "pa-applet"; }
+				{ command = "nm-applet"; }
 				{ command = "i3-back"; }
 				{ command = "fcitx5"; }
 			];

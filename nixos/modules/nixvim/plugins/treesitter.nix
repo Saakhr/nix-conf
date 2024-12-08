@@ -21,6 +21,9 @@
       xml
       yaml
     ];
+    nixvimInjections = true;
+    folding = true;
+    indent = true;
     settings = {
       autotag.enable=true;
       highlight= {enable = true;};
