@@ -10,7 +10,8 @@ let
   # Create a list of import statements
   imports = map (name: ./. + "/${name}") nixFiles;
 in {
-  programs.nixvim = {
-    imports = imports;
-  };
+  imports = [
+    ./cpp.nix
+    ./golang.nix
+  ];
 }

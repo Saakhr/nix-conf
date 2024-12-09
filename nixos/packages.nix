@@ -11,7 +11,6 @@
     ungoogled-chromium
     gedit
     syncthing
-    virtualbox
     keepassxc
     konsole
     rofi
@@ -64,11 +63,12 @@
     zoxide
     wine
     pa_applet
+    piper-tts
 
     # Class
-    #android-studio-full
+    #pkgs-stable.android-studio-full
     scilab-bin
-    #vscode
+    #pkgs-stable.vscode
 
     # GUI utils
     feh

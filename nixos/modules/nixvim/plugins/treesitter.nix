@@ -37,7 +37,7 @@
       };
     };
   }; 
-  plugins.treesitter-textobjects = {
+  programs.nixvim.plugins.treesitter-textobjects = {
     enable = true;
     select = {
       enable = true;

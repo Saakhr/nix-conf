@@ -18,5 +18,6 @@
   programs.nixvim.extraPlugins = [
     pkgs.vimPlugins.cmake-tools-nvim 
     pkgs.vimPlugins.zenbones-nvim
+    pkgs.vimPlugins.lush-nvim
   ];
 }

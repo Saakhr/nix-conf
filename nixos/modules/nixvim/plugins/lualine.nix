@@ -32,6 +32,7 @@ in {
     settings = {
       options = {
         theme = bubbles_theme;
+        globalstatus = true;
         component_separators = { left = ""; right = ""; };
         section_separators = { left = ""; right = ""; };
       };
@@ -45,20 +46,35 @@ in {
         lualine_x = [];
         lualine_y = [ "fileformat" "filetype" "progress" ];
         lualine_z = [
-          #{ __unkeyed-1 = "location"; separator = { right = ""; }; left_padding = 2; }
+          { __unkeyed-1 = "location"; separator = { right = ""; }; left_padding = 2; }
         ];
-  };
+      };
 
       inactive_sections = {
-      #  lualine_a = [ "filename" ];
+        lualine_a = [ "filename" ];
         lualine_b = [];
         lualine_c = [];
         lualine_x = [];
         lualine_y = [];
-       # lualine_z = [ "location" ];
+        lualine_z = [ "location" ];
       };
-      tabline = {};
+      tabline = {
+        lualine_a = [];
+        lualine_b = [];
+        lualine_c = [];
+        lualine_x = [];
+        lualine_y = [];
+        lualine_z = [];
+      };
       extensions = [];
+      winbar = {
+        lualine_a = [];
+        lualine_b = [];
+        lualine_c = [];
+        lualine_x = [];
+        lualine_y = [];
+        lualine_z = [];
+      };
     };
   };
 }
