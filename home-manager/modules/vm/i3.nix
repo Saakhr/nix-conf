@@ -8,6 +8,7 @@ in {
     package = pkgs.i3-gaps;
     config = {
       modifier = mod;
+      defaultWorkspace = "workspace number 1";
       fonts = {
         names = [ "Ubuntu Mono" ];
         style = "Regular";
@@ -21,7 +22,6 @@ in {
       startup = [
         { command = "xfce4-power-manager"; }
         { command = "pa-applet"; }
-        { command = "nm-applet"; }
         { command = "i3-back"; }
         { command = "fcitx5"; }
       ];
@@ -97,10 +97,27 @@ in {
 
       bars = [
         {
-          position = "bottom";
+          position = "top";
           statusCommand = "${pkgs.i3status}/bin/i3status";
+          #separator_symbol =  " " ;
+          colors ={
+            background= "#222333";
+            statusline= "#ffffff";
+            separator= "#ffffff";
+
+            focusedWorkspace = { background = "#4c7899"; border =  "#2B5489"; text = "#ffffff"; };
+            activeWorkspace =  { background = "#333333"; border = "#5f676a"; text = "#ffffff"; };
+            inactiveWorkspace = { background = "#192331"; border =  "#111111"; text = "#888888"; };
+            urgentWorkspace =  { background = "#D32F2F"; border =  "#900000"; text = "#ffffff"; };
+            bindingMode = { background = "#D32F2F"; border =  "#900000"; text = "#ffffff"; };
+          };
+          #padding = 3;
+          trayOutput = "primary";
+          trayPadding = 5;
+          #workspace_min_width = 50;
         }
       ];
     };
   };
+  imports = [ ./i3status.nix ];
 }

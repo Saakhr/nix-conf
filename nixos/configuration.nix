@@ -24,6 +24,8 @@
   #	displayManager.defaultSession = "xfce";
   #};
 
+  services.logind.lidSwitch = "suspend";
+
   networking.hostName = "peesee"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -60,6 +62,7 @@
     ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
+
   virtualisation.virtualbox.host.enable = true;
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -77,6 +80,29 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
+
+    systemd.services.lockScreenOnWake = {
+    description = "Lock screen when waking up";
+    wantedBy = [
+      "sleep.target"
+      "suspend.target"
+      "hibernate.target"
+      "hybrid-sleep.target"
+      "suspend-then-hibernate.target"
+    ];
+    before = [
+      "sleep.target"
+      "suspend.target"
+      "hibernate.target"
+      "hybrid-sleep.target"
+      "suspend-then-hibernate.target"
+    ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.lightdm}/bin/dm-tool lock ; sleep 2";
+      Environment = "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0";
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
 

@@ -21,7 +21,6 @@
       yaml
     ];
     nixvimInjections = true;
-    indent = true;
     settings = {
       highlight={enable = true;};
       indent.enable = true;

@@ -25,8 +25,9 @@
 		nixosConfigurations.peesee = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				pkgs-stable = import nixpkgs-stable {
-					inherit system;
-					config.allowUnfree = true;
+            inherit system;
+            config.allowUnfree = true;
+            config.android_sdk.accept_license = true;
 				};
 				inherit inputs system;
 			};

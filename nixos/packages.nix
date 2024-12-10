@@ -64,10 +64,12 @@
     wine
     pa_applet
     piper-tts
+    vnstat
 
     # Class
     #pkgs-stable.android-studio-full
     scilab-bin
+    php
     #pkgs-stable.vscode
 
     # GUI utils
