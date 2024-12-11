@@ -60,6 +60,7 @@ in
       se = "sudoedit";
       cd = "z";
       cl = "clear";
+      hijri = "~/nix/assets/hijri";
     };
 
     history.path = "${config.xdg.dataHome}/zsh/history";

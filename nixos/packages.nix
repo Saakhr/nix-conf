@@ -6,6 +6,7 @@
     gparted
     telegram-desktop
     mpv
+    vlc
     xfce.thunar
     xarchiver
     ungoogled-chromium
@@ -16,6 +17,8 @@
     rofi
     dmenu
     networkmanager_dmenu
+    webtorrent_desktop
+    qbittorrent
     qdirstat
 
     # Coding stuff
@@ -53,10 +56,14 @@
     brightnessctl
     swww
     openssl
+    alsa-utils
+    pamixer
     ripgrep
     lazygit
     xclip
     bluez
+    jq
+    xtitle
     bluez-tools
     fzf
     vim 
@@ -80,10 +87,12 @@
     fcitx5
     libsForQt5.fcitx5-configtool
     networkmanagerapplet
+    lxappearance
 
     # Wm
     i3status
     i3-back
+    i3lock-color
 
     # Sound
     pavucontrol
@@ -96,6 +105,7 @@
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
     papirus-nord
+    glib
   ];
   fonts.packages = with pkgs; [
     jetbrains-mono

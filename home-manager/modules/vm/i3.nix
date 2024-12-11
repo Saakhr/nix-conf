@@ -22,6 +22,7 @@ in {
       startup = [
         { command = "xfce4-power-manager"; }
         { command = "pa-applet"; }
+        { command = "feh --randomize --bg-fill ~/nix/assets/wall/"; }
         { command = "i3-back"; }
         { command = "fcitx5"; }
       ];
@@ -62,6 +63,9 @@ in {
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
+        "${mod}+x" = "exec bash ~/nix/assets/lock.sh";
+        "${mod}+Shift+w" = "exec feh --randomize --bg-fill ~/nix/assets/wall/";
+
         "${mod}+Tab" = "[con_mark=_back] focus";
 
       };
@@ -76,7 +80,7 @@ in {
           "k" = "resize shrink height 10 px or 10 ppt";
         };
         "exit: [e]Suspend [s]Shutdown [r]Reboot" = {
-          "e" = "mode default exec systemctl suspend";
+          "e" = "exec systemctl suspend mode default";
           "s" = "exec shutdown -h 0";
           "r" = "exec reboot";
           Return = "mode default";
@@ -84,7 +88,30 @@ in {
           "${mod}+Shitft+x" = "mode default";
         };
       };
-      window.commands= [
+
+
+
+      colors.focused = {
+        background = "#285577";
+        border= "#020063";
+        childBorder = "#285577";
+        indicator = "#2e9ef4";
+        text = "#ffffff";
+      };
+      # colors.focusedInactive.border= "#285577";
+      colors.unfocused={
+        background = "#222222";
+        border= "#4c7899";
+        childBorder = "#222222";
+        indicator = "#292d2e";
+        text = "#888888";
+      };
+      floating.border = 1;
+      floating.titlebar = false;
+      window = { 
+        titlebar = false;
+        border = 1;
+        commands = [
         {
           command = "floating enable";
           criteria.class="kcalc";	
@@ -94,30 +121,41 @@ in {
           criteria.class="Zathura";	
         }
       ];
-
+      };
       bars = [
         {
           position = "top";
-          statusCommand = "${pkgs.i3status}/bin/i3status";
-          #separator_symbol =  " " ;
+          statusCommand = "i3status";
+          extraConfig = ''
+                separator_symbol " "
+                padding 2px 0
+                workspace_min_width 20
+          '';
           colors ={
             background= "#222333";
             statusline= "#ffffff";
             separator= "#ffffff";
 
-            focusedWorkspace = { background = "#4c7899"; border =  "#2B5489"; text = "#ffffff"; };
+            focusedWorkspace = { background = "#4c7899"; border =  "#020063"; text = "#ffffff"; };
             activeWorkspace =  { background = "#333333"; border = "#5f676a"; text = "#ffffff"; };
             inactiveWorkspace = { background = "#192331"; border =  "#111111"; text = "#888888"; };
             urgentWorkspace =  { background = "#D32F2F"; border =  "#900000"; text = "#ffffff"; };
             bindingMode = { background = "#D32F2F"; border =  "#900000"; text = "#ffffff"; };
           };
-          #padding = 3;
           trayOutput = "primary";
           trayPadding = 5;
           #workspace_min_width = 50;
+          fonts = {
+            names = [ "GeistMono Nerd Font" ];
+            style = "Black";
+            size = 8.00;
+          };
         }
       ];
     };
   };
-  imports = [ ./i3status.nix ];
+  imports = [ 
+    ./i3status.nix
+    ./i3blocks.nix        
+  ];
 }
