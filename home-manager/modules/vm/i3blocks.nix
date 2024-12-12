@@ -2,21 +2,30 @@
   programs.i3blocks = {
     enable = true;
     bars = {
-      top = {
+      bar = {
+        # Make sure this block comes after the time block
+        # title = {
+        #   interval = "persist";
+        #   command = "xtitle -s";
+        # };
+        date = {
+          position = 1;
+          command = "echo $(date '+%a %d-%m-%Y')";
+          interval = 3;
+        };
+        # time_label={
+        #   position = 2;
+        #   full_text=" ";
+        # };
         time = {
-      command = "date +%r";
-      interval = 1;
-    };
-    # Make sure this block comes after the time block
-    date = lib.hm.dag.entryAfter [ "time" ] {
-      command = "date +%d";
-      interval = 5;
-    };
-    # And this block after the example block
-    example = lib.hm.dag.entryAfter [ "date" ] {
-      command = "echo hi $(date +%s)";
-      interval = 3;
-    };
+          label=" ";
+          position = 3;
+          #min_height = "80%";
+          command = "echo ' '$(date +%r)' '";
+          background = "#00dddd";
+          color = "#000000";
+          interval = 1;
+        };
       };
     };
   };

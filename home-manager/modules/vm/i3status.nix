@@ -68,7 +68,7 @@
       "load" = {
         position = 8;
         settings = {
-          format = "<span color='#fc0d05' size='large'> </span><span bgcolor='#fc0d05' foreground='white'> %1min </span>";
+          format = "<span color='#fc0d05' size='large'> </span><span bgcolor='#fc0d05' foreground='white'> %1min </span>";
           max_threshold = 5;
         };
       };

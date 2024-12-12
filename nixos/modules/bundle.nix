@@ -10,8 +10,10 @@
     ./trim.nix
     ./xserver.nix
     ./inputs.nix
+    ./docker.nix
     ./nixvim/nixvim.nix
   ];
+  services.libinput.enable = true;
 
 }
 

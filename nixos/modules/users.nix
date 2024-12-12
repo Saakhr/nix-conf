@@ -1,7 +1,7 @@
 {
    users.users.agent = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "input" "networkmanager" "network" "audio" "vboxusers" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "input" "networkmanager" "docker" "audio" "vboxusers" ]; # Enable ‘sudo’ for the user.
   #   packages = with pkgs; [
   #     firefox
   #     tree

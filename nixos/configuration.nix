@@ -81,7 +81,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-    systemd.services.lockScreenOnWake = {
+  systemd.services.lockScreenOnWake = {
     description = "Lock screen when waking up";
     wantedBy = [
       "sleep.target"

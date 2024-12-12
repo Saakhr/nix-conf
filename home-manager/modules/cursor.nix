@@ -2,7 +2,7 @@
   home = {
     pointerCursor = {
       package = pkgs.vanilla-dmz;
-      name = "Vanilla-DMZ";
+      name = "Vanilla-DMZ-AA";
       size = 24;
       gtk.enable = true;
       x11 = {

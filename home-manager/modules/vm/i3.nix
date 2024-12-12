@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }: 
-
 let 
   mod = "Mod4";
 in {
@@ -80,7 +79,7 @@ in {
           "k" = "resize shrink height 10 px or 10 ppt";
         };
         "exit: [e]Suspend [s]Shutdown [r]Reboot" = {
-          "e" = "exec systemctl suspend mode default";
+          "e" = "exec systemctl suspend";
           "s" = "exec shutdown -h 0";
           "r" = "exec reboot";
           Return = "mode default";
@@ -125,6 +124,7 @@ in {
       bars = [
         {
           position = "top";
+          # statusCommand = "i3blocks -c ~/.config/i3blocks/bar";
           statusCommand = "i3status";
           extraConfig = ''
                 separator_symbol " "

@@ -27,6 +27,7 @@
     gcc
     gh
     go
+    docker
 
 
     # CLI utils
@@ -58,11 +59,13 @@
     openssl
     alsa-utils
     pamixer
+    acpi
     ripgrep
     lazygit
     xclip
     bluez
     jq
+    postgresql
     xtitle
     bluez-tools
     fzf
@@ -74,10 +77,8 @@
     vnstat
 
     # Class
-    #pkgs-stable.android-studio-full
     scilab-bin
     php
-    #pkgs-stable.vscode
 
     # GUI utils
     feh
