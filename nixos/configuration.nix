@@ -68,7 +68,7 @@
   # services.xserver.enable = true;
 
 
-  services.openssh.enable = true;  
+  services.openssh.enable = false;  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

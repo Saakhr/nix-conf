@@ -27,7 +27,6 @@
     gcc
     gh
     go
-    docker
 
 
     # CLI utils
@@ -65,6 +64,7 @@
     xclip
     bluez
     jq
+    iw
     postgresql
     xtitle
     bluez-tools
@@ -75,6 +75,7 @@
     pa_applet
     piper-tts
     vnstat
+    sysstat
 
     # Class
     scilab-bin
@@ -85,6 +86,7 @@
     kcalc
     mupdf
     zathura
+    gucharmap
     fcitx5
     libsForQt5.fcitx5-configtool
     networkmanagerapplet

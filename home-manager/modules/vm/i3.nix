@@ -124,10 +124,10 @@ in {
       bars = [
         {
           position = "top";
-          # statusCommand = "i3blocks -c ~/.config/i3blocks/bar";
-          statusCommand = "i3status";
+          statusCommand = "i3blocks -c ~/.config/i3blocks/bar";
+          # statusCommand = "i3status";
           extraConfig = ''
-                separator_symbol " "
+                separator_symbol "|"
                 padding 2px 0
                 workspace_min_width 20
           '';
@@ -147,8 +147,8 @@ in {
           #workspace_min_width = 50;
           fonts = {
             names = [ "GeistMono Nerd Font" ];
-            style = "Black";
-            size = 8.00;
+            style = "UltraBlack";
+            size = 8.10;
           };
         }
       ];

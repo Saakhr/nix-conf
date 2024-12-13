@@ -6,5 +6,6 @@
     ./cursor.nix
     ./theme.nix
     ./vm/i3.nix
+    ./rofi.nix
   ];
 }
