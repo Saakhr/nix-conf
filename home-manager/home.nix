@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: {
+{
 	imports = [
 		./zsh.nix
+    ./starting-scripts.nix
 		./modules/bundle.nix
 	];
 	home = {

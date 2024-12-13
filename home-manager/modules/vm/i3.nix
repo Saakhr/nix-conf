@@ -26,7 +26,8 @@ in {
         { command = "fcitx5"; }
       ];
       keybindings = lib.mkOptionDefault {
-        "${mod}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+        "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
+        "${mod}+w" = "exec ${pkgs.rofi}/bin/rofi -show window";
         "${mod}+q" = "kill";
 
         "${mod}+Shift+x" = ''mode "exit: [e]Suspend [s]Shutdown [r]Reboot"'';
@@ -42,6 +43,8 @@ in {
         "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
         "XF86AudioMicMute" = "exec pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+
+        "${mod}+t" = "layout tabbed";
 
         # Apps
         "${mod}+b" = "exec ${pkgs.firefox}/bin/firefox";
