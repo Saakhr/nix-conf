@@ -36,6 +36,7 @@ else
 fi
 # echo "#FFFFFF"
 
-if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
+if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" && "${BATTERY_POWER}" =~ ^[0-9]+$ ]]; then
+  echo "${BATTERY_POWER}"
   exit 33
 fi

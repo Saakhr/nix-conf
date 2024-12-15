@@ -9,6 +9,5 @@
 		homeDirectory = "/home/agent";
 		stateVersion = "24.11";
 	};
-
 	
 }

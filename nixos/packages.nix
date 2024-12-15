@@ -17,6 +17,7 @@
     rofi
     dmenu
     networkmanager_dmenu
+    libreoffice
     webtorrent_desktop
     qbittorrent
     qdirstat
@@ -27,6 +28,7 @@
     gcc
     gh
     go
+    python312
 
 
     # CLI utils
@@ -40,7 +42,9 @@
     htop
     nix-index
     unzip
+    p7zip
     scrot
+    imagemagick
     eza
     ffmpeg
     tmux
@@ -54,9 +58,9 @@
     ntfs3g
     yt-dlp
     brightnessctl
-    swww
     openssl
     alsa-utils
+    lm_sensors
     pamixer
     acpi
     ripgrep
@@ -66,6 +70,7 @@
     jq
     iw
     postgresql
+    mariadb
     xtitle
     bluez-tools
     fzf

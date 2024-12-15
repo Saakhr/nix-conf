@@ -24,12 +24,12 @@ if iw dev "$INTERFACE" link > /dev/null 2>&1; then
     ESSID=$(iw dev "$INTERFACE" link | grep "SSID" | awk '{print $2}')
 
     # Get IP Address
-    IP_ADDRESS=$(ip addr show "$INTERFACE" | grep inet | awk '{print $2}' | cut -d'/' -f1)
+    IP_ADDRESS=$(ip addr show "$INTERFACE" | grep inet |head -1 | awk '{print $2}' | cut -d'/' -f1)
     if [[ "${ESSID}" = "" ]];then
       echo "  Offline"
     else
       # Output the formatted block for i3blocks
-      echo "  ${SIGNAL_PERCENT}% ${ESSID} ${IP_ADDRESS}"
+      echo -e "  ${SIGNAL_PERCENT}% ${ESSID} ${IP_ADDRESS}"
     fi
 else
     # Wireless interface is down
