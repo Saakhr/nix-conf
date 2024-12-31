@@ -17,5 +17,9 @@
     if [ ! -d "${config.home.homeDirectory}/.config/rofi/theme" ]; then
       ${pkgs.git}/bin/git clone https://github.com/newmanls/rofi-themes-collection.git "${config.home.homeDirectory}/.config/rofi/theme"
     fi
+
+    # Logind handles lid switch
+    ${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -n -t bool -s true
+
   '';
 }

@@ -9,13 +9,16 @@
     inactiveOpacity = 0.8;
     activeOpacity = 1.0;
 
-    #opacityRule = [ "100:class_g *?= 'Rofi'" ];
+    opacityRules = [ 
+      "100:class_g *?= 'Rofi'"
+      "100:class_g *?= 'i3lock'"
+    ];
 
-#    extraOptions = ''
-#      corner-radius = 8;
- #     rounded-corners-exclude = [
-  #      "class_i = 'polybar'"
-   #   ];
- #   '';
+    settings = {
+      corner-radius = 16;
+      rounded-corners-exclude = [
+        "class_i = 'bar-0'"
+      ];
+    };
   };
 }

@@ -3,6 +3,7 @@
 
     # Desktop
     firefox
+    tor-browser
     gparted
     telegram-desktop
     mpv
@@ -81,6 +82,8 @@
     piper-tts
     vnstat
     sysstat
+    ventoy-full
+    pipx
 
     # Class
     scilab-bin
@@ -98,6 +101,7 @@
     lxappearance
 
     # Wm
+    xorg.xdpyinfo
     i3status
     i3-back
     i3lock-color

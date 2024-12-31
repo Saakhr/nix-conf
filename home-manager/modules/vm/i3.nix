@@ -26,8 +26,9 @@ in {
         { command = "fcitx5"; }
       ];
       keybindings = lib.mkOptionDefault {
-        "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
-        "${mod}+w" = "exec ${pkgs.rofi}/bin/rofi -show window";
+        "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun -show-icons -dpi 110";
+        "${mod}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show run -show-icons -dpi 110";
+        "${mod}+w" = "exec ${pkgs.rofi}/bin/rofi -show window -show-icons -dpi 110";
         "${mod}+q" = "kill";
 
         "${mod}+Shift+x" = ''mode "exit: [e]Suspend [s]Shutdown [r]Reboot"'';

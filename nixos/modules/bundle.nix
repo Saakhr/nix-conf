@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
     ./bootloader.nix
-    ./py-packages.nix
     ./sound.nix
     ./docker.nix
     ./users.nix

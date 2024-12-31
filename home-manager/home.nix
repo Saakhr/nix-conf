@@ -1,8 +1,8 @@
 {
 	imports = [
 		./zsh.nix
-    ./starting-scripts.nix
 		./modules/bundle.nix
+    ./starting-scripts.nix
 	];
 	home = {
 		username = "agent";

@@ -31,7 +31,7 @@
         };
         battery = lib.hm.dag.entryAfter [ "cpu_usage" ]{
           command = ''bash ~/nix/assets/power.sh'';
-          color = "#FFFFFF";
+          # color = "#FFFFFF";
           interval = 10;
         };
         # loadop = lib.hm.dag.entryAfter [ "cpu_usage" ] {

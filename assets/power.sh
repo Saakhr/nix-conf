@@ -22,16 +22,16 @@ else
 fi
 
 if [[ "${BATTERY_STATE}" = "Discharging" ]]; then
-  echo "${BATTERY_ICON} ${BATTERY_POWER}% (${BATTERY_TIME})"
-  echo "${BATTERY_ICON} ${BATTERY_POWER}% (${BATTERY_TIME})"
+  echo "${BATTERY_ICON} ${BATTERY_POWER}% ${BATTERY_TIME}"
+  echo "${BATTERY_ICON} ${BATTERY_POWER}% ${BATTERY_TIME}"
   echo ""
 elif [[ "${BATTERY_STATE}" = "Not" ]] ;then
   echo "󰂄 ${BATTERY_TIME}"
   echo "󰂄 ${BATTERY_TIME}"
   echo ""
 else
-  echo " ${BATTERY_POWER}% (${BATTERY_TIME} until full)"
-  echo " ${BATTERY_POWER}% (${BATTERY_TIME} until full)"
+  echo " ${BATTERY_POWER}% ${BATTERY_TIME}"
+  echo " ${BATTERY_POWER}% ${BATTERY_TIME}"
   echo ""
 fi
 # echo "#FFFFFF"

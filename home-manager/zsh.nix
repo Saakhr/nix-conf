@@ -17,6 +17,8 @@ in
   home.file.".zshrc".text = ''
     ${prependZshCustom}
     eval "$(zoxide init zsh)"
+    path+=("$HOME/.local/bin")
+    path+=("$HOME/go/bin")
   '';
 
   programs.zsh = {
